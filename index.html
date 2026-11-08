@@ -81,6 +81,8 @@ a{color:inherit}
 .pbtn svg{width:20px;height:20px;flex:none}
 .pbtn.icon{width:44px;padding:0;justify-content:center}
 .pbtn .dot{position:absolute;top:6px;right:7px;width:10px;height:10px;border-radius:50%;background:#D9534F;border:2px solid var(--pg-card)}
+/* jobs to check and new goals to approve */
+.pbtn .pcount{display:inline-flex;align-items:center;justify-content:center;min-width:22px;height:22px;padding:0 6px;border-radius:11px;background:#F2C46B;color:#2E1F04;font-style:normal;font-weight:600;font-size:12.5px;font-variant-numeric:tabular-nums}
 .pbtn.press{transform:scale(.97)}
 .pbtn.mute.on{background:#FBEFD6;border-color:#E0A43A;color:#5A3D05;padding:0 12px;gap:6px;font-size:13px;white-space:nowrap}
 /* the family goal, in the middle of the top bar */
@@ -254,6 +256,57 @@ a{color:inherit}
 .kbtn.on svg{color:var(--accink)}
 .kbtn .bal{display:inline-flex;align-items:center;justify-content:center;min-width:26px;height:22px;padding:0 7px;border-radius:8px;background:var(--acc);color:var(--accink);font-weight:600;font-size:13px;flex:none;font-variant-numeric:tabular-nums}
 .kid.yday .kin{background:linear-gradient(180deg,var(--ring),transparent 30%)}
+
+/* ---------- 3.4.0: the goal under This week, an extra job, and a note for bonus stars or a job paid ---------- */
+.kgoal{width:100%;display:flex;align-items:center;gap:9px;margin-top:7px;padding:5px 10px 5px 5px;border-radius:12px;border:1.5px solid var(--acc);background:var(--card);color:var(--ink);text-align:left;box-shadow:0 1px 2px var(--shade);transition:transform .12s ease}
+.kgoal.press{transform:scale(.98)}
+.kgoal .gp{width:clamp(28px,9cqw,36px);height:clamp(28px,9cqw,36px);flex:none}
+.kgoal>svg:not(.gp){width:24px;height:24px;flex:none;margin:0 4px 0 6px;color:var(--mut)}
+.kgoal .gx{flex:1;min-width:0;display:flex;flex-direction:column;gap:4px}
+.kgoal .gt{display:flex;align-items:baseline;gap:6px;font-weight:500;font-size:clamp(12.5px,3.8cqw,14.5px);line-height:1.15}
+.kgoal .gt span{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.kgoal .gt b{font-weight:600;font-size:clamp(13.5px,4.2cqw,16px);white-space:nowrap;font-variant-numeric:tabular-nums}
+.kgoal .gt b small{font-size:.8em;font-weight:500;color:var(--mut)}
+.kgoal .gx>small{font-weight:400;font-size:11.5px;line-height:1.2;color:var(--mut);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.gbar{display:block;height:7px;border-radius:4px;background:var(--track);overflow:hidden}
+.gbar i{display:block;height:100%;border-radius:4px;background:var(--acc);transition:width .5s ease}
+.kgoal.full{background:var(--soft);box-shadow:0 0 0 3px var(--ring)}
+.kgoal.none{border-style:dashed;border-color:var(--donebd);background:var(--panel);color:var(--mut)}
+.kgoal.ask{border-style:dashed;border-color:var(--due)}
+.kextra{flex:none;display:flex;flex-direction:column;gap:6px}
+.kjob{display:flex;align-items:center;gap:9px;min-height:56px;padding:6px 8px;border-radius:14px;border:1.5px dashed var(--acc);background:var(--card);color:var(--ink);box-shadow:0 1px 2px var(--shade)}
+.kjob .jp{width:clamp(30px,10cqw,42px);height:clamp(30px,10cqw,42px);flex:none}
+.kjob .jx{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.kjob .jl{font-weight:600;font-size:10.5px;line-height:1.1;letter-spacing:.08em;text-transform:uppercase;color:var(--acc)}
+.kjob .jx b{font-weight:600;font-size:clamp(13.5px,4.1cqw,16px);line-height:1.15;overflow:hidden;overflow-wrap:anywhere;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.kjob .jx small{font-weight:400;font-size:clamp(11px,3.3cqw,12.5px);line-height:1.25;color:var(--mut);overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.kjob .jbs{flex:none;display:flex;flex-direction:column;align-items:stretch;gap:4px}
+.kjob .jpr{display:flex;align-items:center;justify-content:center;gap:3px;font-weight:600;font-size:15px;line-height:1;font-variant-numeric:tabular-nums}
+.kjob .jsi{width:15px;height:15px;fill:var(--starfill)}
+.jbtn{min-height:44px;padding:0 12px;border-radius:12px;border:1px solid var(--acc);background:var(--acc);color:var(--accink);font-weight:600;font-size:clamp(13px,3.9cqw,14.5px);display:flex;align-items:center;justify-content:center;gap:5px;white-space:nowrap;transition:transform .12s ease}
+.jbtn svg{width:16px;height:16px;flex:none}
+.jbtn .jw2{display:none}
+.jbtn.ghost{min-height:34px;border-color:var(--line);background:var(--solid);color:var(--ink);font-weight:500}
+.jbtn.press{transform:scale(.97)}
+.kjob.wait{border-style:solid;border-color:var(--due);background:#FFF7E6}
+.kjob.wait .jl{color:#7A4F08}
+.knote{width:100%;display:flex;align-items:center;gap:10px;min-height:58px;padding:6px 12px 6px 6px;border-radius:14px;border:1.5px solid var(--acc);background:var(--solid);color:var(--ink);text-align:left;box-shadow:0 1px 2px var(--shade),0 8px 18px var(--shade);animation:notein .45s cubic-bezier(.2,1.3,.4,1);transition:transform .12s ease}
+.knote.press{transform:scale(.98)}
+.knote .nst{position:relative;flex:none;width:48px;height:48px;display:flex;align-items:center;justify-content:center}
+.knote .nsi{position:absolute;inset:0;width:48px;height:48px;fill:var(--starfill)}
+.knote .nst b{position:relative;margin-top:3px;font-weight:700;font-size:13.5px;color:#3A2A05;font-variant-numeric:tabular-nums}
+.knote .nx{flex:1;min-width:0;display:flex;flex-direction:column;gap:1px}
+.knote .nx b{font-weight:600;font-size:clamp(14px,4.3cqw,17px);line-height:1.15}
+.knote .nx span{font-weight:400;font-size:clamp(12.5px,3.9cqw,14.5px);line-height:1.25;overflow:hidden;overflow-wrap:anywhere;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+@keyframes notein{from{transform:translateY(10px) scale(.96);opacity:0}}
+@container kid (max-width: 330px){
+  .kjob{gap:7px;padding:6px}
+  .kjob .jx small{-webkit-line-clamp:1}
+  .jbtn{padding:0 9px}
+  .jbtn .jw1,.kjob .jmore{display:none}
+  .jbtn .jw2{display:inline}
+  .knote .nst,.knote .nsi{width:40px;height:40px}
+}
 
 /* narrow columns (four kids, or a Chromebook on its side) */
 @container kid (max-width: 370px){
@@ -589,6 +642,27 @@ a{color:inherit}
 .oitem small{display:block;font-weight:400;font-size:12px;color:var(--mut)}
 .oitem.press{transform:scale(.97)}
 .owed .osub{margin:0;font-size:12px;color:var(--mut)}
+/* 3.4.0: the goal at the top of the prize box, and a new goal waiting for a grown-up */
+.gpin{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:8px 10px;border-radius:16px;border:2px solid var(--acc);background:var(--solid);color:var(--ink)}
+.gpin>.pic{width:clamp(44px,13cqw,56px);height:clamp(44px,13cqw,56px);flex:none}
+.gpin>svg:not(.pic){width:28px;height:28px;flex:none;color:var(--mut);margin:0 4px}
+.gpin .gx{flex:1 1 160px;min-width:0;display:flex;flex-direction:column;gap:4px}
+.gpin .gl{font-weight:600;font-size:11px;line-height:1.1;letter-spacing:.08em;text-transform:uppercase;color:var(--acc)}
+.gpin b{font-weight:600;font-size:clamp(16px,5cqw,20px);line-height:1.1}
+.gpin small{font-weight:400;font-size:12.5px;line-height:1.3;color:var(--mut)}
+.gpin.full{background:var(--soft);box-shadow:0 0 0 3px var(--ring)}
+.gpin.none{border-style:dashed;border-color:var(--donebd);background:var(--panel)}
+.gpin.ask{border-color:var(--due);background:#FFF7E6}
+.gpin.ask .gl{color:#7A4F08}
+.gpin .gbs{flex:1 1 100%;display:flex;gap:8px}
+.gpin .gbs .kbtn2{flex:1 1 0;min-height:46px}
+.prize .ptag{position:absolute;top:6px;left:6px;padding:2px 8px;border-radius:8px;background:var(--acc);color:var(--accink);font-weight:600;font-size:10.5px;line-height:1.4;letter-spacing:.06em;text-transform:uppercase}
+.prize .ptag.ask{background:var(--due);color:var(--dueink)}
+.prize.goal{border:2px solid var(--acc);background:var(--soft)}
+.prize.asked{border:2px dashed var(--due)}
+.pcard .pgl{color:var(--ink);font-weight:500}
+.pcard .pgl.ok{color:var(--acc)}
+.pcard .gbar.wide{width:80%}
 @keyframes pin{from{transform:scale(.94);opacity:0}}
 
 /* ---------- full-screen layers ---------- */
@@ -741,6 +815,26 @@ a{color:inherit}
 .given.owe .gn small{color:#F2C46B}
 .given .gd,.given .gc{font-weight:500;font-size:14px;color:var(--p-mut);white-space:nowrap}
 .given .sbtn{min-height:38px;padding:0 12px}
+/* 3.4.0: waiting for you, the goal, extra jobs and bonus stars in settings */
+.waitc{border-color:#8A6D2E;background:#2A2A20}
+.waitc h2{color:#F2C46B}
+.kbw.jw{align-items:center;justify-content:center;background:#2E3F47}
+.kbw.jw svg{width:34px;height:34px;--iline:#EEF2EF;--a:#F2C66B;--b:#7FD1B9;--fw:#3A4C54}
+.orow .ptrack{display:block;height:6px;margin-top:6px;border-radius:3px;background:#3A4C54;overflow:hidden}
+.orow .ptrack i{display:block;height:100%;border-radius:3px;background:var(--p-acc)}
+.orow .sbtn{flex:none}
+.jrow{display:grid;grid-template-columns:44px minmax(0,1fr) minmax(0,1.3fr) 122px 40px;gap:8px;align-items:center;padding:8px 6px;border-radius:12px;background:#26343B}
+.jrow>svg{width:44px;height:44px;--iline:#EEF2EF;--a:#F2C66B;--b:#7FD1B9;--fw:#3A4C54}
+.jrow select{font-size:15px;padding:0 8px}
+.jrow .x{width:40px;height:44px;border:none;border-radius:10px;background:transparent;color:var(--p-mut);display:flex;align-items:center;justify-content:center;padding:0}
+.jrow .jwhen{grid-column:2/4}
+.jrow .jrep{grid-column:4/6}
+.jrow .jstat{grid-column:2/-1;display:flex;align-items:center;gap:8px;flex-wrap:wrap;min-height:38px}
+.jrow .jstat .sbtn{min-height:40px}
+.jst{font-weight:400;font-size:13.5px;color:var(--p-mut)}
+.jst.wait{color:#F2C46B;font-weight:500}
+.bseg button{flex:1 1 0;min-width:0}
+.chip.bchip{padding:4px 14px;min-height:40px;font-size:14px}
 .klist{display:flex;flex-direction:column;gap:6px}
 .krow{display:flex;align-items:center;gap:10px;padding:6px 6px 6px 6px;border-radius:12px;background:#26343B}
 .kbw{flex:none;width:60px;height:42px;border-radius:10px;background:var(--bg);background-color:var(--colbg);display:flex}
@@ -805,6 +899,9 @@ a{color:inherit}
   .crow.prow .lab,.crow.prow .cost{grid-column:2/3}
   .crow.strow{grid-template-columns:28px 40px minmax(0,1fr) 40px 40px}
   .crow.strow .lab{grid-column:2/-1;grid-row:2}
+  .jrow{grid-template-columns:44px minmax(0,1fr) 40px}
+  .jrow .lab,.jrow .cost,.jrow .jwhen,.jrow .jrep,.jrow .jstat{grid-column:2/-1}
+  .orow{flex-wrap:wrap}
   .keys{grid-template-columns:repeat(3,74px)}
   .key{width:74px;height:74px;font-size:30px}
   .kidpick{grid-template-columns:1fr}
@@ -960,10 +1057,17 @@ var PICS = {
   basket: { label: 'Toy basket', svg: '<circle class="fa k" cx="22" cy="12" r="5"/><circle class="fa k" cx="42" cy="12" r="5"/><circle class="fa k" cx="32" cy="23" r="12"/><circle class="fw k" cx="32" cy="27" r="4.5"/><circle cx="27.5" cy="20" r="1.7" style="fill:var(--iline)"/><circle cx="36.5" cy="20" r="1.7" style="fill:var(--iline)"/><path class="fb k" d="M8 32 H56 L51 57 H13 Z"/><path class="k n" d="M12 44 H52 M21 32 L23 57 M32 32 V57 M43 32 L41 57"/>' },
   floor:  { label: 'Clean floor', svg: '<path class="fw k" d="M4 57 L16 41 H60 L48 57 Z"/><path class="fa k" d="M28 5 L31 15 L41 18 L31 21 L28 31 L25 21 L15 18 L25 15 Z"/><path class="fb k" d="M48 9 L49.8 14.2 L55 16 L49.8 17.8 L48 23 L46.2 17.8 L41 16 L46.2 14.2 Z"/>' },
   check:  { label: 'Check mark', svg: '<circle class="fb k" cx="32" cy="32" r="25"/><path class="k n" d="M20 33 L28 41 L45 23"/>' },
-  evening: { label: 'Evening', svg: '<path class="fa k" d="M14 44 A18 18 0 0 1 50 44 Z"/><path class="k n" d="M6 44 H58 M16 52 H48 M32 6 V18 M26 12 L32 18 L38 12"/>' }
+  evening: { label: 'Evening', svg: '<path class="fa k" d="M14 44 A18 18 0 0 1 50 44 Z"/><path class="k n" d="M6 44 H58 M16 52 H48 M32 6 V18 M26 12 L32 18 L38 12"/>' },
+  /* 3.4.0: pictures for extra jobs */
+  bucket: { label: 'Bucket and suds', svg: '<path class="fb k" d="M14 26 H50 L46 57 H18 Z"/><path class="k n" d="M16 26 Q32 12 48 26"/><path class="k n" d="M20 37 H44"/><circle class="fw k" cx="25" cy="13" r="4.5"/><circle class="fw k" cx="37" cy="9" r="5.5"/><circle class="fw k" cx="48" cy="15" r="3.5"/>' },
+  trash:  { label: 'Trash can', svg: '<path class="fb k" d="M15 22 H49 L46 57 H18 Z"/><rect class="fa k" x="10" y="14" width="44" height="8" rx="3"/><path class="k n" d="M27 14 V9 H37 V14 M25 30 L26 50 M32 30 V50 M39 30 L38 50"/>' },
+  plant:  { label: 'Watering can', svg: '<path class="fb k" d="M38 38 L53 24 L57 28 L41 44 Z"/><path class="fb k" d="M10 30 H38 V51 Q38 56 33 56 H15 Q10 56 10 51 Z"/><path class="k n" d="M16 30 Q24 16 32 30"/><circle class="fw k" cx="58" cy="36" r="2.6"/><circle class="fw k" cx="53" cy="42" r="2.6"/><circle class="fw k" cx="59" cy="47" r="2.6"/>' },
+  leaf:   { label: 'Leaf', svg: '<path class="fa k" d="M10 54 Q8 22 44 9 Q57 38 22 53 Q16 55 10 54 Z"/><path class="k n" d="M7 58 L38 21 M21 42 L17 33 M27 35 L25 26 M27 35 L36 38 M21 42 L31 45"/>' }
 };
 /* the picture list for a step in settings: step pictures first, then the chore pictures */
-var PIC_ORDER = ['water', 'soap', 'scrub', 'rinse', 'towel', 'face', 'paste', 'top', 'bottom', 'cup', 'pajamas', 'shirt', 'pants', 'socks', 'shoes', 'blocks', 'shelf', 'basket', 'floor', 'toys', 'book', 'bed', 'dishes', 'table', 'hamper', 'backpack', 'bath', 'pet', 'potty', 'check'];
+var PIC_ORDER = ['water', 'soap', 'scrub', 'rinse', 'towel', 'face', 'paste', 'top', 'bottom', 'cup', 'pajamas', 'shirt', 'pants', 'socks', 'shoes', 'blocks', 'shelf', 'basket', 'floor', 'toys', 'book', 'bed', 'dishes', 'table', 'hamper', 'backpack', 'bath', 'pet', 'potty', 'bucket', 'trash', 'plant', 'leaf', 'check'];
+/* the picture list for an extra job in settings */
+var JOB_PICS = ['bucket', 'trash', 'plant', 'leaf', 'floor', 'dishes', 'table', 'toys', 'hamper', 'shoes', 'shelf', 'basket', 'pet', 'bath', 'book', 'bed', 'backpack', 'shirt', 'check'];
 /* what the chore pictures show, for picking a step's picture */
 var PIC_NAMES = { face: 'Clean face', teeth: 'Toothbrush', dress: 'Top', bed: 'Bed', toys: 'Toy box', book: 'Book', table: 'Plate and fork', dishes: 'Plates', hands: 'Tap and soap', pajamas: 'Moon', hamper: 'Hamper', shoes: 'Shoe', backpack: 'Backpack', bath: 'Bath', pet: 'Pet bowl', potty: 'Potty', school: 'School' };
 function isPic(key) { return !!(key && (ICONS[key] || PICS[key])); }
@@ -1280,7 +1384,7 @@ function growthName(theme, level) { return (STAGE_NAMES[theme] || STAGE_NAMES.bu
 var FORM_LEVELS = [1, 20, 40, 60, 80];
 
 /* ---------- core: family data, parts of the day, per-kid history, potty schedule, school, levels, stars, reminders ---------- */
-var VERSION = '3.3.0';
+var VERSION = '3.4.0';
 var KEY = 'chorechart.family.v1';
 var WORLDS = ['bugs', 'unicorn', 'dino'];
 var MAX_KIDS = 4;
@@ -1377,7 +1481,9 @@ var PRIZE_SETS = {
 function makePrize(icon, name, cost) { return { id: uid(), icon: icon, name: name, cost: cost }; }
 function defaultPrizes(group) { return (PRIZE_SETS[group] || PRIZE_SETS.big).map(function (p) { return makePrize(p[0], p[1], p[2]); }); }
 
-function defaultKid() { return { id: uid(), name: '', group: 'big', theme: 'bugs', goal: 42, reward: 'A special treat', chores: [], best: 1, ms: 0, layout: 'parts', prizeBox: true, claims: [], hist: {} }; }
+/* 3.4.0: goalId (the prize the kid saves for), goalAsk (a new goal waiting for a grown-up), jobs (extra jobs) and extra (job and bonus stars);
+   saveOn, goalOk and goalWarn are filled in by normKid, so their defaults follow the kid's age */
+function defaultKid() { return { id: uid(), name: '', group: 'big', theme: 'bugs', goal: 42, reward: 'A special treat', chores: [], best: 1, ms: 0, layout: 'parts', prizeBox: true, claims: [], hist: {}, goalId: '', goalAsk: '', jobs: [], extra: [] }; }
 /* school: { on, name, xp (the school's own daily XP goal, shown on the item), days } */
 function newKid(name, theme, group, school) {
   var k = defaultKid();
@@ -1397,7 +1503,7 @@ function newKid(name, theme, group, school) {
 function defaultSettings() { return { sound: true, voice: true, quietStart: '19:00', quietEnd: '07:00', schoolStart: '08:30', eveningStart: '15:30', nightStart: '18:00', idleMin: 5, photoSec: 10, autoFull: true, yesterday: true, yesterdayPin: false, repeats: 3, pottyVoice: true, famOn: true, famGoal: 0, famReward: 'Family movie night' }; }
 /* since: first day of use (for the backup reminder); lastBackup: when a backup was last copied or saved; muteUntil: sounds off until then;
    famWeek: the Monday of the week the family goal was last reached; famRewards: family rewards earned, owed until a parent marks them given */
-function defaultData() { return { v: 7, pinHash: null, salt: Math.random().toString(36).slice(2, 10), kids: [], settings: defaultSettings(), fired: {}, since: todayKey(), lastBackup: null, muteUntil: 0, famWeek: '', famRewards: [] }; }
+function defaultData() { return { v: 8, pinHash: null, salt: Math.random().toString(36).slice(2, 10), kids: [], settings: defaultSettings(), fired: {}, since: todayKey(), lastBackup: null, muteUntil: 0, famWeek: '', famRewards: [] }; }
 
 var data = null;
 var storageOk = true;
@@ -1431,7 +1537,7 @@ function load() {
   d.muteUntil = +d.muteUntil || 0;
   d.famWeek = typeof d.famWeek === 'string' ? d.famWeek : '';
   d.famRewards = normFamRewards(d.famRewards);
-  d.v = 7;
+  d.v = 8;
   data = d;
   uniqueKidIds();
   /* save the update at once, so the new chore and step ids stay the same from now on */
@@ -1475,6 +1581,15 @@ function normKid(src) {
   c.claims = c.claims.filter(function (x) { return x && x.id; });
   /* a claim with owed: true was picked but not given yet; older claims count as given */
   c.claims.forEach(function (x) { x.cost = Math.max(0, Math.round(+x.cost) || 0); if (!x.day) { x.day = String(x.at || '').slice(0, 10) || todayKey(); } if (x.owed !== true) { delete x.owed; } if (typeof x.given !== 'string') { delete x.given; } });
+  /* saving for a goal: on for kids 4 and up; a grown-up approves each new goal; the kid sees what spending does to the goal */
+  if (typeof c.saveOn !== 'boolean') { c.saveOn = c.group !== 'little'; }
+  if (typeof c.goalOk !== 'boolean') { c.goalOk = true; }
+  if (typeof c.goalWarn !== 'boolean') { c.goalWarn = true; }
+  var hasPrize = function (id) { return typeof id === 'string' && !!id && c.prizes.some(function (p) { return p.id === id; }); };
+  c.goalId = hasPrize(c.goalId) ? c.goalId : '';
+  c.goalAsk = hasPrize(c.goalAsk) && c.goalAsk !== c.goalId ? c.goalAsk : '';
+  c.jobs = normJobs(c.jobs);
+  c.extra = normExtra(c.extra);
   c.goal = Math.max(1, Math.min(500, Math.round(+c.goal) || AGE_SETS[c.group].goal));
   c.best = Math.max(1, Math.round(+c.best) || 1);
   c.ms = Math.max(0, Math.round(+c.ms) || 0);
@@ -1666,8 +1781,9 @@ function setDoneOn(k, date, cid, on) {
   save();
 }
 function dayStars(r) { return r ? Math.min(r.ids.length, r.of || r.ids.length) : 0; }
-/* stars to spend in the prize box: every chore star and potty trip ever earned, minus prizes picked. Levels never go down. */
-function earnedStars(k) { var s = 0; Object.keys(k.hist).forEach(function (d) { var r = k.hist[d]; s += dayStars(r) + (r.potty ? r.potty.length : 0); }); return s; }
+/* stars to spend in the prize box: every chore star and potty trip ever earned, plus job and bonus stars, minus prizes picked. Levels never go down. */
+function choreStars(k) { var s = 0; Object.keys(k.hist).forEach(function (d) { var r = k.hist[d]; s += dayStars(r) + (r.potty ? r.potty.length : 0); }); return s; }
+function earnedStars(k) { return choreStars(k) + extraStars(k); }
 function spentStars(k) { var s = 0; k.claims.forEach(function (c) { s += +c.cost || 0; }); return s; }
 function balance(k) { return Math.max(0, earnedStars(k) - spentStars(k)); }
 function findPrize(k, pid) { return k.prizes.filter(function (p) { return p.id === pid; })[0] || null; }
@@ -1675,16 +1791,114 @@ function claimPrize(k, pid) {
   var p = findPrize(k, pid);
   if (!p || balance(k) < p.cost) { return null; }
   var cl = { id: uid(), prize: p.id, name: p.name, icon: p.icon, cost: p.cost, day: todayKey(), at: new Date().toISOString(), owed: true };
+  /* the goal, picked at last: the kid can choose a new one */
+  if (k.goalId === p.id) { cl.goal = true; k.goalId = ''; }
+  if (k.goalAsk === p.id) { k.goalAsk = ''; }
   k.claims.push(cl);
   save();
   return cl;
 }
-function undoClaim(k, id) { k.claims = k.claims.filter(function (c) { return c.id !== id; }); save(); }
+function undoClaim(k, id) {
+  var cl = findClaim(k, id);
+  k.claims = k.claims.filter(function (c) { return c.id !== id; });
+  if (cl && cl.goal && !k.goalId && findPrize(k, cl.prize)) { k.goalId = cl.prize; }
+  save();
+}
 /* prizes owed: picked (stars spent) but not given yet */
 function findClaim(k, id) { return k.claims.filter(function (c) { return c.id === id; })[0] || null; }
 function giveClaim(k, id) { var c = findClaim(k, id); if (!c) { return null; } delete c.owed; c.given = todayKey(); save(); return c; }
 function owedClaims(k) { return k.claims.filter(function (c) { return c.owed; }); }
 function owedCount() { var n = data.famRewards.filter(function (r) { return r.owed; }).length; data.kids.forEach(function (k) { n += owedClaims(k).length; }); return n; }
+
+/* ---------- 3.4.0: saving for a goal, extra jobs and bonus stars ----------
+   Job and bonus stars go to the prize box only: they never count toward levels, the day's stars or the week.
+   extra: [{ id, kind: 'job' | 'bonus' | 'carry', stars, text, day, at, seen }]; seen: false shows a note in the kid's column until it is tapped.
+   carry: the oldest records folded into one when the list gets long, so no stars are lost */
+var MAX_EXTRA = 400, MAX_JOBS = 12, JOB_MAX_STARS = 50;
+var DAY_PLURAL = ['Sundays', 'Mondays', 'Tuesdays', 'Wednesdays', 'Thursdays', 'Fridays', 'Saturdays'];
+/* once (until it is paid), every day, or one day a week (d0 = Sundays ... d6 = Saturdays) */
+var JOB_REPEATS = ['once', 'daily', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd0'];
+function repeatText(r) { return r === 'daily' ? 'Every day' : (/^d[0-6]$/.test(r) ? DAY_PLURAL[+r.charAt(1)] : 'Once'); }
+function isDay(s) { return /^\d{4}-\d{2}-\d{2}$/.test(s); }
+function normJobs(list) {
+  var seen = {};
+  return (Array.isArray(list) ? list : []).filter(function (j) { return j && typeof j === 'object'; }).slice(0, MAX_JOBS).map(function (j) {
+    var id = typeof j.id === 'string' && j.id && !seen[j.id] ? j.id : uid();
+    seen[id] = 1;
+    return {
+      id: id, icon: isPic(j.icon) ? j.icon : 'bucket', name: String(j.name || '').trim().slice(0, 32) || 'Extra job',
+      stars: Math.max(1, Math.min(JOB_MAX_STARS, Math.round(+j.stars) || 5)), when: String(j.when || '').trim().slice(0, 60),
+      repeat: JOB_REPEATS.indexOf(j.repeat) !== -1 ? j.repeat : 'once', state: ['open', 'waiting', 'paid'].indexOf(j.state) !== -1 ? j.state : 'open',
+      paid: isDay(j.paid) ? j.paid : '', at: typeof j.at === 'string' ? j.at : ''
+    };
+  });
+}
+function normExtra(list) {
+  var seen = {};
+  return (Array.isArray(list) ? list : []).filter(function (x) { return x && typeof x === 'object' && ['job', 'bonus', 'carry'].indexOf(x.kind) !== -1; }).map(function (x) {
+    var id = typeof x.id === 'string' && x.id && !seen[x.id] ? x.id : uid();
+    seen[id] = 1;
+    return { id: id, kind: x.kind, stars: Math.max(0, Math.min(99999, Math.round(+x.stars) || 0)), text: String(x.text || '').slice(0, 60), day: isDay(x.day) ? x.day : todayKey(), at: typeof x.at === 'string' ? x.at : '', seen: x.seen !== false };
+  });
+}
+function extraStars(k) { var s = 0; (k.extra || []).forEach(function (x) { s += x.stars; }); return s; }
+function addExtra(k, kind, stars, text) {
+  var x = { id: uid(), kind: kind, stars: stars, text: String(text || '').slice(0, 60), day: todayKey(), at: new Date().toISOString(), seen: false };
+  k.extra.push(x);
+  if (k.extra.length > MAX_EXTRA) {
+    var old = k.extra.splice(0, k.extra.length - MAX_EXTRA + 1), sum = 0;
+    old.forEach(function (y) { sum += y.stars; });
+    k.extra.unshift({ id: uid(), kind: 'carry', stars: sum, text: 'Earlier jobs and bonuses', day: old[old.length - 1].day, at: '', seen: true });
+  }
+  save();
+  return x;
+}
+function findExtra(k, id) { return k.extra.filter(function (x) { return x.id === id; })[0] || null; }
+function seeExtra(k, id) { var x = findExtra(k, id); if (x && !x.seen) { x.seen = true; save(); } return x; }
+function unseenExtra(k) { return k.extra.filter(function (x) { return !x.seen && x.kind !== 'carry'; }); }
+function removeExtra(k, id) { var x = findExtra(k, id); k.extra = k.extra.filter(function (y) { return y.id !== id; }); save(); return x; }
+function bonusLog(k) { return k.extra.filter(function (x) { return x.kind === 'bonus'; }); }
+function jobLog(k) { return k.extra.filter(function (x) { return x.kind === 'job'; }); }
+/* bonus stars: a parent celebrates something with a reason (a report card, first place); one-off, not a price per grade */
+function giveBonus(k, stars, reason) { return addExtra(k, 'bonus', Math.max(1, Math.min(JOB_MAX_STARS, Math.round(+stars) || 1)), String(reason || '').trim().slice(0, 60) || 'Bonus stars'); }
+
+/* extra jobs: optional work a parent posts, with stars and what "done" means. The kid taps I'm done; a grown-up checks with the PIN.
+   Not yet sends it back with nothing taken away. */
+function makeJob() { return { id: uid(), icon: 'bucket', name: 'New job', stars: 5, when: '', repeat: 'once', state: 'open', paid: '', at: '' }; }
+function findJob(k, id) { return k.jobs.filter(function (j) { return j.id === id; })[0] || null; }
+/* a job today: open (offered), waiting (done, for a grown-up to check), paid (today, or for good when it was a one-time job) or off (not its day) */
+function jobState(j, date) {
+  date = date || todayKey();
+  if (j.state === 'waiting') { return 'waiting'; }
+  if (j.state === 'paid' && (j.repeat === 'once' || j.paid === date)) { return 'paid'; }
+  if (j.repeat === 'once' || j.repeat === 'daily') { return 'open'; }
+  return parseKey(date).getDay() === +j.repeat.charAt(1) ? 'open' : 'off';
+}
+function kidJobs(k) { return k.jobs.filter(function (j) { var s = jobState(j); return s === 'open' || s === 'waiting'; }); }
+function jobsWaiting(k) { return k.jobs.filter(function (j) { return j.state === 'waiting'; }); }
+function jobDone(k, id) { var j = findJob(k, id); if (!j || jobState(j) !== 'open') { return null; } j.state = 'waiting'; j.at = new Date().toISOString(); save(); return j; }
+function jobNotYet(k, id) { var j = findJob(k, id); if (!j || j.state !== 'waiting') { return null; } j.state = 'open'; j.at = ''; save(); return j; }
+function jobPay(k, id) { var j = findJob(k, id); if (!j || j.state !== 'waiting') { return null; } j.state = 'paid'; j.paid = todayKey(); j.at = ''; return addExtra(k, 'job', j.stars, j.name); }
+function jobAgain(k, id) { var j = findJob(k, id); if (!j) { return null; } j.state = 'open'; j.paid = ''; j.at = ''; save(); return j; }
+
+/* saving for a goal: the kid picks one prize to save for; with goalOk on, a new goal waits for a grown-up's yes and the old goal stays until then */
+function goalPrize(k) { return k.saveOn && k.goalId ? findPrize(k, k.goalId) : null; }
+function askPrize(k) { return k.saveOn && k.goalAsk ? findPrize(k, k.goalAsk) : null; }
+function askGoal(k, pid) {
+  var p = findPrize(k, pid);
+  if (!p || !k.saveOn) { return ''; }
+  if (k.goalId === pid) { if (k.goalAsk) { k.goalAsk = ''; save(); } return 'same'; }
+  if (!k.goalOk) { k.goalId = pid; k.goalAsk = ''; save(); return 'set'; }
+  k.goalAsk = pid; save();
+  return 'asked';
+}
+function approveGoal(k) { var p = askPrize(k); if (!p) { return null; } k.goalId = p.id; k.goalAsk = ''; save(); return p; }
+function declineGoal(k) { if (!k.goalAsk) { return false; } k.goalAsk = ''; save(); return true; }
+/* a parent sets (or clears) the goal in settings: that is the grown-up's yes */
+function setGoal(k, pid) { k.goalId = pid && findPrize(k, pid) ? pid : ''; if (k.goalAsk && k.goalAsk === k.goalId) { k.goalAsk = ''; } save(); }
+/* things waiting for a grown-up: jobs to check and new goals to approve */
+function waitCount(k) { return jobsWaiting(k).length + (askPrize(k) ? 1 : 0); }
+function waitTotal() { var n = 0; data.kids.forEach(function (k) { n += waitCount(k); }); return n; }
 function stats(k) {
   syncToday(k);
   var list = todays(k), ids = doneIds(k), n = list.filter(function (x) { return ids.indexOf(x.id) !== -1; }).length;
@@ -2200,7 +2414,7 @@ function buildShell() {
     '<div class="tools"><span class="hint" id="hint" hidden>Tap the screen once to turn on sounds</span>' +
     '<button type="button" class="pbtn icon mute" data-act="mute" id="mutebtn" aria-label="Mute sounds for an hour (parent PIN)" hidden>' + SPEAKER + '</button><span class="clock" id="clock"></span>' +
     '<button type="button" class="pbtn icon" data-act="full" id="fullbtn" aria-label="Full screen" hidden>' + FULL + '</button>' +
-    '<button type="button" class="pbtn" data-act="parents" aria-label="Parents: settings, PIN required">' + LOCK + '<span>Parents</span><i class="dot" id="updot" aria-hidden="true" hidden></i></button></div>';
+    '<button type="button" class="pbtn" data-act="parents" id="parentsbtn" aria-label="Parents: settings, PIN required">' + LOCK + '<span>Parents</span><i class="dot" id="updot" aria-hidden="true" hidden></i><i class="pcount" id="pcount" aria-hidden="true" hidden></i></button></div>';
 }
 function updateTop() {
   if (!els.top) { return; }
@@ -2212,6 +2426,10 @@ function updateTop() {
   showIf('hint', !!(data && data.settings.sound && !audioReady() && !mu));
   showIf('fullbtn', canFull() && !isFull());
   showIf('updot', !!updateReady);
+  /* jobs to check and new goals to approve: a count on the Parents button */
+  var wc = data && setupDone() ? waitTotal() : 0, pc = document.getElementById('pcount'), pb = document.getElementById('parentsbtn');
+  if (pc) { pc.hidden = !wc; setText('pcount', String(wc)); }
+  if (pb) { var plbl = 'Parents: settings, PIN required' + (wc ? '. ' + wc + ' waiting for a grown-up' : ''); if (pb.getAttribute('aria-label') !== plbl) { pb.setAttribute('aria-label', plbl); } }
   if (mb) {
     mb.hidden = !(data && setupDone());
     if (mb.classList.contains('on') !== mu) {
@@ -2422,6 +2640,65 @@ function pottyHTML(k, big) {
   return '<button type="button" class="potty' + (pottyDue(k) ? ' due' : '') + (big ? ' big' : '') + '" data-act="potty" aria-label="' + esc('Potty. ' + text + (more ? ', ' + count : '') + '. Tap after going.') + '">' +
     iconUse('potty', 'pic') + '<span class="ptx"><b>Potty</b><small>' + esc(text) + (more ? '<span class="pn">' + esc(more) + '</span>' : '') + '</small></span><span class="pgo">I went</span></button>';
 }
+/* ---------- 3.4.0: the goal under This week, an extra job, and a note for bonus stars or a job paid ---------- */
+var TARGET = line('<circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><path d="M12 11.2v1.6M11.2 12h1.6"/>');
+var announced = {}; /* notes already celebrated since the app opened */
+function goalRowHTML(k, st) {
+  if (!k.saveOn || !k.prizeBox || !k.prizes.length) { return ''; }
+  var g = goalPrize(k), a = askPrize(k), bank = st.bank;
+  if (!g) {
+    if (a) {
+      return '<button type="button" class="kgoal ask" data-act="prizes" aria-label="' + esc('Asked to save for ' + a.name + '. Waiting for a grown-up. Opens the prize box') + '">' + prizeUse(a.icon, 'gp') +
+        '<span class="gx"><span class="gt"><span>' + esc('Asked to save for ' + a.name) + '</span></span><small>Waiting for a grown-up</small></span></button>';
+    }
+    return '<button type="button" class="kgoal none" data-act="prizes" aria-label="Pick something to save for. Opens the prize box">' + TARGET + '<span class="gx"><span class="gt"><span>Pick something to save for</span></span></span></button>';
+  }
+  var full = bank >= g.cost, have = Math.min(bank, g.cost), pct = Math.min(100, Math.round(bank / g.cost * 100));
+  var words = full ? g.name + ': you have enough!' : 'Saving for ' + g.name;
+  return '<button type="button" class="kgoal' + (full ? ' full' : '') + '" data-act="prizes" aria-label="' + esc((full ? words : words + ': ' + have + ' of ' + g.cost + ' stars') + (a ? '. Asked for ' + a.name + ', waiting for a grown-up' : '') + '. Opens the prize box') + '">' + prizeUse(g.icon, 'gp') +
+    '<span class="gx"><span class="gt"><span>' + esc(words) + '</span><b>' + have + '<small>/' + g.cost + '</small></b></span><span class="gbar"><i style="width:' + pct + '%"></i></span>' +
+    (a ? '<small>' + esc('Asked for ' + a.name + ' · waiting for a grown-up') + '</small>' : '') + '</span></button>';
+}
+function noteHTML(x) {
+  var title = x.kind === 'bonus' ? 'Bonus stars!' : 'Job paid!', text = x.kind === 'bonus' ? x.text : x.stars + ' stars for ' + x.text;
+  return '<button type="button" class="knote" data-act="note" data-xid="' + esc(x.id) + '" aria-label="' + esc(title + ' Plus ' + x.stars + '. ' + text + '. Tap to close.') + '">' +
+    '<span class="nst">' + starIcon('nsi') + '<b>+' + x.stars + '</b></span><span class="nx"><b>' + esc(title) + '</b><span>' + esc(text) + '</span></span></button>';
+}
+function jobHTML(k, j, n) {
+  var more = n > 1 ? '<span class="jmore">' + esc(' · ' + (n - 1) + ' more') + '</span>' : '';
+  if (jobState(j) === 'waiting') {
+    return '<div class="kjob wait" role="group" aria-label="' + esc('Extra job, waiting for a grown-up: ' + j.name) + '">' + picUse(j.icon, 'jp') +
+      '<span class="jx"><span class="jl">Extra job · waiting' + more + '</span><b>' + esc(j.name) + '</b><small>A grown-up checks it. Then the stars are yours.</small></span>' +
+      '<span class="jbs"><button type="button" class="jbtn" data-act="jcheck" data-jid="' + esc(j.id) + '" aria-label="Grown-up: check (parent PIN)">' + LOCK + '<span class="jw1">Grown-up: check</span><span class="jw2">Check</span></button>' +
+      '<button type="button" class="jbtn ghost" data-act="jundo" data-jid="' + esc(j.id) + '">Not yet</button></span></div>';
+  }
+  return '<div class="kjob" role="group" aria-label="' + esc('Extra job: ' + j.name + ', ' + j.stars + ' stars' + (j.when ? '. Done when: ' + j.when : '')) + '">' + picUse(j.icon, 'jp') +
+    '<span class="jx"><span class="jl">Extra job' + more + '</span><b>' + esc(j.name) + '</b>' + (j.when ? '<small>' + esc('Done when: ' + j.when) + '</small>' : '') + '</span>' +
+    '<span class="jbs"><span class="jpr">+' + j.stars + starIcon('jsi') + '</span><button type="button" class="jbtn" data-act="jdone" data-jid="' + esc(j.id) + '">I’m done</button></span></div>';
+}
+/* one job at a time (a waiting one first), so the column stays calm */
+function extraHTML(k) {
+  var notes = unseenExtra(k), x = notes[notes.length - 1], jobs = kidJobs(k);
+  var j = jobs.filter(function (y) { return y.state === 'waiting'; })[0] || jobs[0];
+  var out = (x ? noteHTML(x) : '') + (j ? jobHTML(k, j, jobs.length) : '');
+  return out ? '<div class="kextra">' + out + '</div>' : '';
+}
+/* a new note gets confetti and its words, once */
+function announceNotes(k) {
+  var notes = unseenExtra(k), x = notes[notes.length - 1];
+  if (!x || announced[x.id]) { return; }
+  announced[x.id] = 1;
+  setTimeout(function () {
+    fanfare(); confetti(k);
+    speak(k.name + ', ' + (x.kind === 'bonus' ? 'bonus stars! ' + x.text + '!' : x.stars + ' stars for ' + x.text + '!'));
+  }, 250);
+}
+/* a grown-up checks a job on the kid's screen: the PIN pays it */
+function checkJob(k, jid) {
+  var j = findJob(k, jid);
+  if (!j || j.state !== 'waiting') { return; }
+  openPin(function () { jobPay(k, j.id); renderKid(k, true); updateTop(); }, 'Grown-up check', 'Enter the parent PIN to give ' + k.name + ' ' + j.stars + ' stars for ' + j.name);
+}
 function renderKid(k, force) {
   var col = cols[k.id];
   if (!col) { return; }
@@ -2452,12 +2729,14 @@ function renderKid(k, force) {
     var showPrizes = k.prizeBox && k.prizes.length > 0, showY = !!data.settings.yesterday, nb = 1 + (showPrizes ? 1 : 0) + (showY ? 1 : 0);
     var note = (k.reward ? GIFT + '<span>' + esc(k.reward) + '</span>' : '') + (st.offDays ? '<span class="offn">' + st.offDays + ' day' + (st.offDays > 1 ? 's' : '') + ' off</span>' : '');
     var week = '<div class="kweek"><div class="wrow"><span>This week</span><b>' + st.week + '<small>/' + st.goal + '</small></b>' + starIcon('ws') + '</div>' +
-      '<div class="track"><i style="width:' + Math.min(100, Math.round(st.week / st.goal * 100)) + '%"></i></div>' + (note ? '<div class="wnote">' + note + '</div>' : '') + '</div>';
+      '<div class="track"><i style="width:' + Math.min(100, Math.round(st.week / st.goal * 100)) + '%"></i></div>' + (note ? '<div class="wnote">' + note + '</div>' : '') + (yd ? '' : goalRowHTML(k, st)) + '</div>';
     var btns = '<div class="kbtns n' + nb + '">' +
       (showY ? '<button type="button" class="kbtn' + (yd ? ' on' : '') + '" data-act="yday" aria-pressed="' + yd + '">' + (yd ? '<span>Today</span>' + TODAY : YDAY + '<span>Yesterday</span>') + '</button>' : '') +
       '<button type="button" class="kbtn" data-act="month">' + CAL + '<span>' + (nb > 1 ? 'My month' : 'See my month') + '</span></button>' +
       (showPrizes ? '<button type="button" class="kbtn kpz" data-act="prizes" aria-label="Prize box, ' + st.bank + ' stars to spend">' + GIFT + '<span>Prizes</span><span class="bal">' + st.bank + '</span></button>' : '') + '</div>';
-    html = headHTML(k, t, st, yd, n, total) + msg + '<div class="kbody">' + (side ? '<div class="kside">' + side + '</div>' : '') + '<div class="kboard">' + board + '</div></div><footer class="kfoot">' + week + btns + '</footer>';
+    html = headHTML(k, t, st, yd, n, total) + msg + '<div class="kbody">' + (side ? '<div class="kside">' + side + '</div>' : '') + '<div class="kboard">' + board + '</div></div>' +
+      (yd ? '' : extraHTML(k)) + '<footer class="kfoot">' + week + btns + '</footer>';
+    if (!yd) { announceNotes(k); }
   }
   col.kin.innerHTML = html;
   /* keep the kid's scroll place; when a new part of the day starts, scroll to it */
@@ -2614,6 +2893,10 @@ function activate(t, cid) {
   else if (a === 'sclose') { closeSteps(k); }
   else if (a === 'sdone') { stepDoneBtn(k); }
   else if (a === 'sback') { var sc = cols[k.id]; if (sc) { sc.sdone = null; renderKid(k, true); } }
+  else if (a === 'note') { seeExtra(k, t.getAttribute('data-xid')); renderKid(k, true); pop(true); }
+  else if (a === 'jdone') { var jd = jobDone(k, t.getAttribute('data-jid')); renderKid(k, true); updateTop(); if (jd) { pop(true); speak('Great! A grown-up will check ' + jd.name + '.', true); } }
+  else if (a === 'jundo') { jobNotYet(k, t.getAttribute('data-jid')); renderKid(k, true); updateTop(); pop(false); }
+  else if (a === 'jcheck') { checkJob(k, t.getAttribute('data-jid')); }
   else if (a === 'name') { if (big.id === k.id) { endBig(); } else { setBig(k); } }
   else if (a === 'big') { setBig(k); }
   else if (a === 'unbig') { endBig(); }
@@ -3144,11 +3427,32 @@ function monthAct(k, t) {
 }
 
 /* ---------- the prize box: spend stars; a parent's PIN confirms each pick; a picked prize is owed until a grown-up gives it ---------- */
+/* 3.4.0: the goal at the top of the prize box, and a new goal waiting for a grown-up's yes */
+function goalBlockHTML(k, bank) {
+  if (!k.saveOn) { return ''; }
+  var g = goalPrize(k), a = askPrize(k), out = '';
+  if (a) {
+    out += '<section class="gpin ask" aria-label="' + esc('Asked a grown-up: ' + a.name) + '">' + prizeUse(a.icon) +
+      '<span class="gx"><span class="gl">Asked a grown-up</span><b>' + esc(a.name) + '</b><small>' + esc(g ? g.name + ' stays your goal until a grown-up says yes.' : 'A grown-up says yes with the PIN.') + '</small></span>' +
+      '<span class="gbs"><button type="button" class="kbtn2 pri" data-act="g-yes">' + LOCK + 'Grown-up: yes</button><button type="button" class="kbtn2" data-act="g-cancel">Cancel</button></span></section>';
+  }
+  if (g) {
+    var full = bank >= g.cost, pct = Math.min(100, Math.round(bank / g.cost * 100));
+    out += '<section class="gpin' + (full ? ' full' : '') + '" aria-label="' + esc((full ? 'You have enough for ' : 'Saving for ') + g.name + ': ' + Math.min(bank, g.cost) + ' of ' + g.cost + ' stars') + '">' + prizeUse(g.icon) +
+      '<span class="gx"><span class="gl">' + (full ? 'You have enough' : 'Saving for') + '</span><b>' + esc(g.name) + '</b><span class="gbar"><i style="width:' + pct + '%"></i></span>' +
+      '<small>' + esc(full ? 'Tap it below to pick it with a grown-up, or keep saving.' : (g.cost - bank) + ' more stars to go. ' + bank + ' of ' + g.cost + '.') + '</small></span></section>';
+  } else if (!a) {
+    out += '<section class="gpin none">' + TARGET + '<span class="gx"><b>Pick something to save for</b><small>Tap a prize you need more stars for.</small></span></section>';
+  }
+  return out;
+}
 function renderPrizes(k) {
   var c = cols[k.id], s = c.layerState, bank = balance(k), list = k.prizes.slice().sort(function (a, b) { return a.cost - b.cost; });
+  var goal = goalPrize(k), asked = askPrize(k);
   var cards = list.map(function (p) {
-    var ok = bank >= p.cost, short = p.cost - bank, pct = Math.min(100, Math.round(bank / p.cost * 100));
-    return '<button type="button" class="prize' + (ok ? ' ok' : '') + '" data-pid="' + esc(p.id) + '" aria-label="' + esc(p.name + ', ' + p.cost + ' stars' + (ok ? '' : ', ' + short + ' more needed')) + '">' +
+    var ok = bank >= p.cost, short = p.cost - bank, pct = Math.min(100, Math.round(bank / p.cost * 100)), isG = !!goal && goal.id === p.id, isA = !!asked && asked.id === p.id;
+    return '<button type="button" class="prize' + (ok ? ' ok' : '') + (isG ? ' goal' : '') + (isA ? ' asked' : '') + '" data-pid="' + esc(p.id) + '" aria-label="' + esc(p.name + ', ' + p.cost + ' stars' + (isG ? ', your goal' : '') + (isA ? ', asked a grown-up' : '') + (ok ? '' : ', ' + short + ' more needed')) + '">' +
+      (isG ? '<span class="ptag">Goal</span>' : (isA ? '<span class="ptag ask">Asked</span>' : '')) +
       prizeUse(p.icon) + '<span class="pn">' + esc(p.name) + '</span><span class="pc">' + starIcon() + p.cost + '</span>' +
       (ok ? '<span class="pst yes">You can pick this!</span>' : '<span class="pst"><span class="track"><i style="width:' + pct + '%"></i></span>' + short + ' more</span>') + '</button>';
   }).join('');
@@ -3158,18 +3462,29 @@ function renderPrizes(k) {
   }).join('');
   var given = k.claims.filter(function (cl) { return !cl.owed; }), last = given.length ? given[given.length - 1] : null;
   var foot = last ? 'Last prize given: ' + last.name + ', ' + shortDate(last.given || last.day) + '.' : 'Do chores to earn stars. Pick a prize with a grown-up.';
-  var modal = '', p = s.pick ? findPrize(k, s.pick) : null;
+  var modal = '', p = s.pick ? findPrize(k, s.pick) : null, sv = s.save ? findPrize(k, s.save) : null;
   if (p) {
+    /* picking something other than the goal: first show what it does to the goal; Keep saving is the main button, and picking stays possible */
+    var after = bank - p.cost, warn = !!goal && goal.id !== p.id && k.goalWarn, hold = warn && after < goal.cost;
+    var gline = !warn ? '' : (hold ? '<p class="pgl">' + esc('Your ' + goal.name + ' goes back to ' + Math.max(0, after) + ' of ' + goal.cost + '.') + '</p><span class="gbar wide"><i style="width:' + Math.max(0, Math.min(100, Math.round(after / goal.cost * 100))) + '%"></i></span>' :
+      '<p class="pgl ok">' + esc('You will still have enough for your ' + goal.name + '.') + '</p>');
     modal = '<div class="pmodal" role="dialog" aria-modal="true" aria-label="Pick this prize?"><div class="pcard">' + prizeUse(p.icon) + '<h4>' + esc(p.name) + '?</h4>' +
-      '<p>It costs ' + p.cost + ' stars. You will have ' + (bank - p.cost) + ' left.</p>' +
-      '<div class="pbtns"><button type="button" class="kbtn2" data-act="p-no">Not now</button><button type="button" class="kbtn2 pri" data-act="p-yes">' + LOCK + 'Ask a grown-up</button></div></div></div>';
+      '<p>It costs ' + p.cost + ' stars. You will have ' + after + ' left.</p>' + gline +
+      '<div class="pbtns">' + (hold ? '<button type="button" class="kbtn2 pri" data-act="p-no">Keep saving</button><button type="button" class="kbtn2" data-act="p-yes">' + LOCK + 'Ask a grown-up</button>' :
+        '<button type="button" class="kbtn2" data-act="p-no">Not now</button><button type="button" class="kbtn2 pri" data-act="p-yes">' + LOCK + 'Ask a grown-up</button>') + '</div></div></div>';
+  } else if (sv) {
+    var swap = goal ? (k.goalOk ? 'A grown-up says yes first. Your ' + goal.name + ' stays your goal until then.' : 'It takes the place of your ' + goal.name + '.') : (k.goalOk ? 'A grown-up says yes first.' : '');
+    modal = '<div class="pmodal" role="dialog" aria-modal="true" aria-label="Save for this prize?"><div class="pcard">' + prizeUse(sv.icon) + '<h4>' + esc('Save for ' + sv.name + '?') + '</h4>' +
+      '<p>' + esc('It costs ' + sv.cost + ' stars. You have ' + bank + '.') + '</p>' + (swap ? '<p class="pq">' + esc(swap) + '</p>' : '') +
+      '<div class="pbtns"><button type="button" class="kbtn2" data-act="s-no">Not now</button><button type="button" class="kbtn2 pri" data-act="s-yes">Save for this</button></div></div></div>';
   } else if (s.done) {
     modal = '<div class="pmodal" role="dialog" aria-modal="true" aria-label="Prize picked"><div class="pcard win">' + prizeUse(s.done.icon) + '<h4>' + esc(s.done.name) + '!</h4>' +
+      (s.done.goal ? '<p class="pgl ok">You saved up for it!</p>' : '') +
       '<p>' + bank + ' stars left</p><p class="pq">Grown-up: is it given now, or later?</p>' +
       '<div class="pbtns"><button type="button" class="kbtn2" data-act="p-later">Later</button><button type="button" class="kbtn2 pri" data-act="p-given">Given now</button></div></div></div>';
   }
   var bankHTML = '<div class="bank" role="img" aria-label="' + bank + ' stars to spend">' + starIcon() + '<b>' + bank + '</b><span>stars to spend</span></div>';
-  c.layer.innerHTML = '<div class="lwrap">' + layerHead(k, 'Prize box', bankHTML) +
+  c.layer.innerHTML = '<div class="lwrap">' + layerHead(k, 'Prize box', bankHTML) + goalBlockHTML(k, bank) +
     (owed ? '<section class="owed"><h4>Coming up</h4><div class="olist">' + owed + '</div><p class="osub">A grown-up taps a prize here when it is given.</p></section>' : '') +
     '<div class="pgrid">' + (cards || '<p class="lempty">No prizes yet. A grown-up can add them under Parents.</p>') + '</div><p class="pfoot">' + esc(foot) + '</p></div>' + modal;
 }
@@ -3179,13 +3494,36 @@ function prizeAct(k, t) {
   if (t.hasAttribute('data-pid')) {
     var p = findPrize(k, t.getAttribute('data-pid')), bank = balance(k);
     if (!p) { return; }
-    if (bank >= p.cost) { s.pick = p.id; s.done = null; renderLayer(k); speak(p.name + '? Ask a grown-up!', true); }
-    else { shakeEl(t); speak('Save ' + (p.cost - bank) + ' more stars for ' + p.name + '!', true); }
+    if (bank >= p.cost) { s.pick = p.id; s.done = null; s.save = null; renderLayer(k); speak(p.name + '? Ask a grown-up!', true); return; }
+    /* not enough yet: with saving on, offer to save for it (unless it is already the goal, or already asked for) */
+    var gp = goalPrize(k), ap = askPrize(k);
+    if (k.saveOn && !(gp && gp.id === p.id) && !(ap && ap.id === p.id)) { s.save = p.id; s.pick = null; s.done = null; renderLayer(k); speak('Save for ' + p.name + '?', true); return; }
+    shakeEl(t);
+    speak(ap && ap.id === p.id ? 'A grown-up says yes first.' : 'Save ' + (p.cost - bank) + ' more stars for ' + p.name + '!', true);
     return;
   }
   var a = t.getAttribute('data-act');
   if (a === 'back') { closeLayer(k); }
   else if (a === 'p-no') { s.pick = null; renderLayer(k); }
+  else if (a === 's-no') { s.save = null; renderLayer(k); }
+  else if (a === 's-yes') {
+    var sp = findPrize(k, s.save), res = sp ? askGoal(k, sp.id) : '';
+    s.save = null;
+    renderLayer(k); renderKid(k); updateTop();
+    if (res === 'asked') { pop(true); speak('Ask a grown-up to say yes to ' + sp.name + '.', true); }
+    else if (res === 'set') { fanfare(); speak(sp.name + ' is your new goal!'); }
+  }
+  else if (a === 'g-cancel') { declineGoal(k); renderLayer(k); renderKid(k); updateTop(); pop(false); }
+  else if (a === 'g-yes') {
+    var aq = askPrize(k);
+    if (!aq) { renderLayer(k); return; }
+    openPin(function () {
+      var np = approveGoal(k), c = cols[k.id];
+      if (c && c.layerState && c.layerState.type === 'prizes') { c.touched = Date.now(); renderLayer(k); }
+      renderKid(k); updateTop();
+      if (np) { fanfare(); speak(np.name + ' is ' + k.name + '’s new goal!'); }
+    }, 'Grown-up check', 'Enter the parent PIN to make ' + aq.name + ' ' + k.name + '’s new goal (' + aq.cost + ' stars)');
+  }
   else if (a === 'p-later') { s.done = null; renderLayer(k); pop(true); }
   else if (a === 'p-given') { var dn = s.done; s.done = null; if (dn) { giveClaim(k, dn.id); } renderLayer(k); pop(true); }
   else if (a === 'owed') {
@@ -3503,7 +3841,7 @@ function fixCard(k, msg) {
 }
 /* prize box editor and the list of prizes given */
 function prizeCard(k, msg) {
-  var earned = earnedStars(k), spent = spentStars(k);
+  var earned = earnedStars(k), spent = spentStars(k), ex = extraStars(k);
   var rows = k.prizes.map(function (p) {
     var opts = PRIZE_ORDER.map(function (t) { return opt(t, PRIZE_ICONS[t].label, p.icon); }).join('');
     return '<div class="crow prow" data-pid="' + esc(p.id) + '">' + prizeUse(p.icon, 'pi') + '<select data-f="picon" aria-label="Prize picture">' + opts + '</select>' +
@@ -3518,12 +3856,100 @@ function prizeCard(k, msg) {
   }).join('');
   return '<div class="card" id="prizecard"><h2>' + esc(k.name) + '’s prize box</h2>' +
     kidToggle(k, 'prizeBox', 'Show the Prizes button', 'Kids spend stars on a prize. Your PIN confirms each pick, and a prize stays owed until you mark it given.') +
-    '<div class="big">' + balance(k) + ' stars to spend</div><p class="note">' + earned + ' earned (chores' + (k.potty.on ? ' and potty trips' : '') + '), ' + spent + ' spent on prizes. Spending stars never lowers a level or the weekly count.</p>' +
+    '<div class="big">' + balance(k) + ' stars to spend</div><p class="note">' + earned + ' earned (chores' + (k.potty.on ? ', potty trips' : '') + (ex ? ', ' + ex + ' from extra jobs and bonuses' : '') + '), ' + spent + ' spent on prizes. Spending stars never lowers a level or the weekly count.</p>' +
     (rows || '<p class="note">No prizes yet.</p>') +
     '<div class="row-btns"><button type="button" class="sbtn" data-act="padd">+ Add a prize</button></div>' +
     (given ? '<div class="fld">Prizes picked' + (k.claims.length > 8 ? ' (latest 8 of ' + k.claims.length + ')' : '') + '<div class="givenlist">' + given + '</div></div>' : '') +
     okNote(msg) + '</div>';
 }
+/* ---------- 3.4.0: waiting for you (jobs to check, a new goal to approve), saving for a goal, extra jobs, bonus stars ---------- */
+function jobOf(k, el) { var row = el.closest('[data-jid]'); return row && k ? findJob(k, row.getAttribute('data-jid')) : null; }
+function doneWhen(j) {
+  if (!j.at) { return ''; }
+  var d = new Date(j.at), dk = dateKey(d);
+  return 'Done ' + (dk === todayKey() ? 'today at ' + clockText(d) : shortDate(dk)) + ' · ';
+}
+function waitRows(k) {
+  var rows = jobsWaiting(k).map(function (j) {
+    return '<div class="orow" data-jid="' + esc(j.id) + '"><span class="kbw jw">' + picUse(j.icon, 'kb') + '</span><span class="on"><b>' + esc('Job: ' + j.name) + '</b><small>' + esc(doneWhen(j) + j.stars + ' stars' + (j.when ? ' · Done when: ' + j.when : '')) + '</small></span>' +
+      '<button type="button" class="sbtn pri" data-act="jpay">' + esc('Paid: ' + j.stars + ' stars') + '</button><button type="button" class="sbtn" data-act="jno">Not yet</button></div>';
+  });
+  var a = askPrize(k), g = goalPrize(k);
+  if (a) {
+    rows.push('<div class="orow"><span class="kbw jw">' + prizeUse(a.icon, 'kb') + '</span><span class="on"><b>' + esc('New goal: ' + a.name + ' (' + a.cost + ' stars)') + '</b><small>' + esc(g ? g.name + ' stays the goal until you answer.' : 'No goal until you answer.') + '</small></span>' +
+      '<button type="button" class="sbtn pri" data-act="gyes">Yes, new goal</button><button type="button" class="sbtn" data-act="gno">Not now</button></div>');
+  }
+  return rows;
+}
+/* above the kid's settings, only when something is waiting */
+function waitCard(k, msg) {
+  var rows = waitRows(k);
+  if (!rows.length && !msg) { return '<div id="waitcard" hidden></div>'; }
+  return '<div class="card waitc" id="waitcard"><h2>Waiting for you</h2>' + (rows.length ? '<div class="olist2">' + rows.join('') + '</div>' : '') + okNote(msg) + '</div>';
+}
+function goalSetCard(k, msg) {
+  var g = goalPrize(k), bank = balance(k);
+  var opts = opt('', 'No goal', k.goalId) + k.prizes.map(function (p) { return opt(p.id, p.name + ' · ' + p.cost + ' stars', k.goalId); }).join('');
+  var cur = g ? '<div class="orow"><span class="kbw jw">' + prizeUse(g.icon, 'kb') + '</span><span class="on"><b>' + esc(g.name + ' · ' + Math.min(bank, g.cost) + ' of ' + g.cost + ' stars') + '</b>' +
+      '<small>' + esc(bank >= g.cost ? k.name + ' has enough. Picking it clears the goal.' : (g.cost - bank) + ' more to go.') + '</small><span class="ptrack"><i style="width:' + Math.min(100, Math.round(bank / g.cost * 100)) + '%"></i></span></span>' +
+      '<button type="button" class="sbtn" data-act="gclear">Clear</button></div>' :
+    '<p class="note">' + esc('No goal yet. ' + k.name + ' picks one in the prize box, or set one here.') + '</p>';
+  return '<div class="card" id="goalcard"><h2>Saving for a goal</h2>' +
+    kidToggle(k, 'saveOn', 'Saving goal for ' + k.name, 'One prize to save for, shown under This week in ' + k.name + '’s column. All prize box stars count toward it.') +
+    (k.saveOn ? cur +
+      '<div class="fields"><label class="fld" for="f-goalpick">Set the goal<select id="f-goalpick" data-f="goalpick">' + opts + '</select></label></div>' +
+      kidToggle(k, 'goalOk', 'A grown-up approves a new goal', k.name + ' asks with Save for this. You say yes with the PIN, on the chart or here. The old goal stays until then.') +
+      kidToggle(k, 'goalWarn', 'Show what spending does to the goal', 'Before another prize is picked: “Your goal goes back to 5 of 40.” Keep saving is the main button; picking stays possible.') : '') +
+    okNote(msg) + '</div>';
+}
+function jobStatus(j) {
+  var st = jobState(j);
+  if (st === 'waiting') { return '<span class="jst wait">Waiting for you</span><button type="button" class="sbtn pri" data-act="jpay">' + esc('Paid: ' + j.stars + ' stars') + '</button><button type="button" class="sbtn" data-act="jno">Not yet</button>'; }
+  if (st === 'paid') { return j.repeat === 'once' ? '<span class="jst">' + esc('Paid ' + shortDate(j.paid) + '. Off the chart.') + '</span><button type="button" class="sbtn" data-act="jagain">Post again</button>' : '<span class="jst">Paid today. Back on its next day.</span>'; }
+  if (st === 'off') { return '<span class="jst">' + esc('On the chart ' + repeatText(j.repeat)) + '</span>'; }
+  return '<span class="jst">On the chart now</span>';
+}
+function jobRow(k, j) {
+  var pics = JOB_PICS.map(function (t) { return opt(t, picLabel(t), j.icon); }).join('');
+  var reps = JOB_REPEATS.map(function (r) { return opt(r, repeatText(r), j.repeat); }).join('');
+  return '<div class="jrow" data-jid="' + esc(j.id) + '">' + picUse(j.icon, 'jpic') + '<select data-f="jicon" aria-label="Job picture">' + pics + '</select>' +
+    '<input type="text" class="lab" data-f="jname" maxlength="32" value="' + esc(j.name) + '" aria-label="Job">' +
+    '<label class="cost"><input type="number" data-f="jstars" min="1" max="' + JOB_MAX_STARS + '" inputmode="numeric" value="' + j.stars + '" aria-label="' + esc('Stars for ' + j.name) + '"><span>stars</span></label>' +
+    '<button type="button" class="x" data-act="jrm" aria-label="' + esc('Remove ' + j.name) + '">' + XSVG + '</button>' +
+    '<label class="fld jwhen">Done when<input type="text" data-f="jwhen" maxlength="60" value="' + esc(j.when) + '" placeholder="All 4 chairs wiped, cloth in the hamper"></label>' +
+    '<label class="fld jrep">How often<select data-f="jrep">' + reps + '</select></label>' +
+    '<div class="jstat">' + jobStatus(j) + '</div></div>';
+}
+function jobsCard(k, msg) {
+  var rows = k.jobs.map(function (j) { return jobRow(k, j); }).join(''), paid = jobLog(k).slice(-5).reverse();
+  return '<div class="card" id="jobscard"><h2>Extra jobs</h2>' + (rows || '<p class="note">No extra jobs yet.</p>') +
+    '<div class="row-btns"><button type="button" class="sbtn" data-act="jadd"' + (k.jobs.length >= MAX_JOBS ? ' disabled' : '') + '>+ Add a job</button></div>' +
+    (paid.length ? '<div class="fld">Paid lately<div class="givenlist">' + paid.map(function (x) { return '<div class="given"><span class="gd">' + esc(shortDate(x.day)) + '</span><span class="gn">' + esc(x.text) + '</span><span class="gc">+' + x.stars + ' stars</span></div>'; }).join('') + '</div></div>' : '') +
+    '<p class="note">' + esc('Optional work: it shows in ' + k.name + '’s column with its stars and what “done” means. ' + k.name + ' taps I’m done; you check it and pay with the PIN, on the chart or under Waiting for you. Not yet sends it back with nothing taken away. Job stars go to the prize box only, not toward the day, levels or the week.') + '</p>' +
+    okNote(msg) + '</div>';
+}
+var bonusPick = {}; /* kid id -> { n, reason } while a parent fills in a bonus */
+var BONUS_N = [1, 2, 3, 5, 10];
+var BONUS_WHY = ['Great report card', 'First place', 'Learned something hard', 'Kind helper', 'Brave at the doctor'];
+function bonusCard(k, msg) {
+  var b = bonusPick[k.id] || (bonusPick[k.id] = { n: 5, reason: '' }), log = bonusLog(k).slice(-6).reverse();
+  return '<div class="card" id="bonuscard"><h2>Bonus stars</h2>' +
+    '<div class="fld">Stars<div class="seg bseg">' + BONUS_N.map(function (n) { return '<button type="button" data-act="bpick" data-n="' + n + '" aria-pressed="' + (b.n === n) + '">' + n + '</button>'; }).join('') + '</div></div>' +
+    '<label class="fld" for="f-breason">For<input type="text" id="f-breason" data-f="breason" maxlength="60" value="' + esc(b.reason) + '" placeholder="What the stars are for"></label>' +
+    '<div class="chips">' + BONUS_WHY.map(function (w) { return '<button type="button" class="chip bchip" data-act="bwhy" data-t="' + esc(w) + '">' + esc(w) + '</button>'; }).join('') + '</div>' +
+    '<div class="row-btns"><button type="button" class="sbtn pri" data-act="bgive">' + esc('Give ' + b.n + ' star' + (b.n === 1 ? '' : 's') + ' to ' + k.name) + '</button></div>' +
+    (log.length ? '<div class="fld">Given before<div class="givenlist">' + log.map(function (x) {
+      return '<div class="given"><span class="gd">' + esc(shortDate(x.day)) + '</span><span class="gn">' + esc(x.text) + '</span><span class="gc">+' + x.stars + '</span><button type="button" class="sbtn" data-act="brm" data-xid="' + esc(x.id) + '">Remove</button></div>';
+    }).join('') + '</div></div>' : '') +
+    '<p class="note">' + esc('For one-off celebrations, not a set price per grade. ' + k.name + '’s column shows the stars and the reason until it is tapped. Bonus stars go to the prize box only, not toward levels or the week.') + '</p>' + okNote(msg) + '</div>';
+}
+/* after a job, goal or bonus changes: the cards it shows up in, the tab badges and the chart */
+function refreshMoney(k, flash) {
+  swapCard('waitcard', waitCard(k)); swapCard('goalcard', goalSetCard(k)); swapCard('jobscard', jobsCard(k)); swapCard('prizecard', prizeCard(k)); swapCard('bonuscard', bonusCard(k));
+  renderSettingsTabsOnly(); render(); updateTop();
+  if (flash) { flashNote(flash); }
+}
+
 /* steps inside a chore: pick the chore, then each step's picture and words */
 var stepSel = {}; /* kid id -> the chore whose steps are being edited */
 function stepChore(k) {
@@ -3653,7 +4079,7 @@ function levelCard(k) {
 }
 function kidTab(k) {
   var st = stats(k);
-  return '<div class="set-cols"><div class="set-col">' + choresCard(k) + stepsCard(k) + fixCard(k) + prizeCard(k) +
+  return waitCard(k) + '<div class="set-cols"><div class="set-col">' + choresCard(k) + stepsCard(k) + fixCard(k) + prizeCard(k) + goalSetCard(k) + jobsCard(k) + bonusCard(k) +
     '</div><div class="set-col">' + aboutCard(k) + orderCard(k) + bigCard(k) + schoolCard(k) + pottyCard(k) + goalCard(k, st) + levelCard(k) +
       '<div class="card"><h2>Stars</h2><div class="row-btns"><button type="button" class="sbtn" data-act="cleartoday">Clear today’s checks</button><button type="button" class="sbtn bad" data-act="wipe">Erase ' + esc(k.name) + '’s stars, levels and prizes given</button></div></div>' +
       '<div class="card"><h2>Remove</h2><p class="note">Takes ' + esc(k.name) + '’s column, chores and stars off this Chromebook. Make a backup first if you may want them back.</p><div class="row-btns"><button type="button" class="sbtn bad" data-act="rmkid"' + (data.kids.length < 2 ? ' disabled' : '') + '>Remove ' + esc(k.name) + '</button></div></div>' +
@@ -3781,7 +4207,9 @@ function appCard() {
 function tabsHTML() {
   var owe = owedCount();
   return data.kids.map(function (k) {
-    return '<button type="button" class="tab" role="tab" data-act="tab" data-k="' + esc(k.id) + '" data-theme="' + themeOf(k) + '" aria-selected="' + (setTab === k.id) + '">' + avatarOf(k, 'tb') + '<span>' + esc(k.name) + '</span></button>';
+    var w = waitCount(k);
+    return '<button type="button" class="tab" role="tab" data-act="tab" data-k="' + esc(k.id) + '" data-theme="' + themeOf(k) + '" aria-selected="' + (setTab === k.id) + '">' + avatarOf(k, 'tb') + '<span>' + esc(k.name) + '</span>' +
+      (w ? '<i class="tbadge" aria-label="' + w + ' waiting for you">' + w + '</i>' : '') + '</button>';
   }).join('') + '<button type="button" class="tab" role="tab" data-act="tab" data-k="family" aria-selected="' + (setTab === 'family') + '">' + HOME + '<span>Family</span>' + (owe ? '<i class="tbadge" aria-label="' + owe + ' owed">' + owe + '</i>' : '') + '</button>';
 }
 function renderSettings(flash) {
@@ -3826,7 +4254,7 @@ function arm(b, key, label) {
   armed[key] = Date.now(); b.classList.add('armed'); b.textContent = label; return false;
 }
 function flashNote(t) { var p = document.getElementById('flashnote'); if (p) { p.hidden = false; p.textContent = t; } }
-function refreshKidCards(k) { swapCard('fixcard', fixCard(k)); swapCard('prizecard', prizeCard(k)); swapCard('lvlcard', levelCard(k)); }
+function refreshKidCards(k) { swapCard('fixcard', fixCard(k)); swapCard('prizecard', prizeCard(k)); swapCard('lvlcard', levelCard(k)); swapCard('goalcard', goalSetCard(k)); }
 function settingsClick(e) {
   var tg = e.target;
   if (tg && tg.type === 'date' && typeof tg.showPicker === 'function') { try { tg.showPicker(); } catch (x) {} return; }
@@ -3905,6 +4333,12 @@ function settingsClick(e) {
     else if (ck === 'stepsVoice') { swapCard('stepscard', stepsCard(k, k.stepsVoice ? 'Steps are read out loud for ' + k.name + '.' : 'Steps are not read out loud for ' + k.name + '.')); }
     else if (ck === 'inOrder') { swapCard('ordercard', orderCard(k, k.inOrder ? k.name + '’s chores go in order.' : 'Any of ' + k.name + '’s chores can be tapped.')); }
     else if (ck === 'bigView') { swapCard('bigcard', bigCard(k, k.bigView ? 'Tapping ' + k.name + '’s name makes the column big.' : 'The big view is off for ' + k.name + '.')); }
+    else if (ck === 'saveOn' || ck === 'goalOk' || ck === 'goalWarn') {
+      var gmsg = ck === 'saveOn' ? (k.saveOn ? k.name + ' can save for a goal.' : 'Saving for a goal is off for ' + k.name + '.') :
+        (ck === 'goalOk' ? (k.goalOk ? 'A new goal waits for your yes.' : k.name + ' can change the goal without asking.') : (k.goalWarn ? k.name + ' sees what spending does to the goal.' : 'No goal note before picking a prize.'));
+      if (ck === 'goalOk' && !k.goalOk && k.goalAsk) { approveGoal(k); }
+      swapCard('goalcard', goalSetCard(k, gmsg)); swapCard('waitcard', waitCard(k)); renderSettingsTabsOnly(); updateTop();
+    }
     else { renderSettings(k.toddler ? 'Toddler mode is on for ' + k.name + '.' : 'Toddler mode is off for ' + k.name + '.'); }
     render();
   }
@@ -3975,9 +4409,45 @@ function settingsClick(e) {
     swapCard('fixcard', fixCard(k, 'Day' + (cnt === 1 ? '' : 's') + ' off for ' + (who === 'all' ? 'all kids' : k.name) + ': ' + span + '.'));
   }
   else if (a === 'offrm') { var dk = b.getAttribute('data-day'); setOff(k, dk, false); swapCard('fixcard', fixCard(k, shortDate(dk) + ' is a normal day again.')); }
-  else if (a === 'padd') { k.prizes.push(makePrize('gift', 'New prize', 10)); save(); swapCard('prizecard', prizeCard(k, 'Added a prize. Set its picture, name and stars.')); }
-  else if (a === 'prm') { var pid = b.closest('.prow').getAttribute('data-pid'); k.prizes = k.prizes.filter(function (p) { return p.id !== pid; }); save(); swapCard('prizecard', prizeCard(k)); }
-  else if (a === 'cundo') { var cl = b.getAttribute('data-id'); if (arm(b, 'cundo' + cl, 'Tap again to give the stars back')) { undoClaim(k, cl); swapCard('prizecard', prizeCard(k, 'Prize undone. The stars are back.')); } }
+  else if (a === 'padd') { k.prizes.push(makePrize('gift', 'New prize', 10)); save(); swapCard('prizecard', prizeCard(k, 'Added a prize. Set its picture, name and stars.')); swapCard('goalcard', goalSetCard(k)); }
+  else if (a === 'prm') {
+    var pid = b.closest('.prow').getAttribute('data-pid');
+    k.prizes = k.prizes.filter(function (p) { return p.id !== pid; });
+    if (k.goalId === pid) { k.goalId = ''; }
+    if (k.goalAsk === pid) { k.goalAsk = ''; }
+    save(); swapCard('prizecard', prizeCard(k)); refreshMoney(k);
+  }
+  else if (a === 'cundo') { var cl = b.getAttribute('data-id'); if (arm(b, 'cundo' + cl, 'Tap again to give the stars back')) { undoClaim(k, cl); swapCard('prizecard', prizeCard(k, 'Prize undone. The stars are back.')); swapCard('goalcard', goalSetCard(k)); render(); } }
+  /* 3.4.0: jobs, goals and bonus stars */
+  else if (a === 'jpay') { var pj = jobOf(k, b), px = pj ? jobPay(k, pj.id) : null; refreshMoney(k, px ? 'Paid ' + px.stars + ' stars to ' + k.name + ' for ' + px.text + '.' : ''); }
+  else if (a === 'jno') { var nj = jobOf(k, b); if (nj) { jobNotYet(k, nj.id); } refreshMoney(k, nj ? nj.name + ' is back on ' + k.name + '’s chart, with nothing taken away.' : ''); }
+  else if (a === 'jagain') { var aj = jobOf(k, b); if (aj) { jobAgain(k, aj.id); } refreshMoney(k, aj ? aj.name + ' is on ' + k.name + '’s chart again.' : ''); }
+  else if (a === 'jadd') {
+    if (k.jobs.length >= MAX_JOBS) { return; }
+    k.jobs.push(makeJob()); save();
+    swapCard('jobscard', jobsCard(k, 'Added a job. Set its picture, name, stars and what “done” means.')); render();
+    var jn = document.querySelectorAll('#jobscard [data-f="jname"]'); if (jn.length) { jn[jn.length - 1].focus(); jn[jn.length - 1].select(); }
+  }
+  else if (a === 'jrm') {
+    var rj = jobOf(k, b);
+    if (rj && arm(b, 'jrm' + rj.id, 'Tap again to remove')) { k.jobs = k.jobs.filter(function (j) { return j.id !== rj.id; }); save(); refreshMoney(k, rj.name + ' is removed. Stars already paid stay.'); }
+  }
+  else if (a === 'gyes') { var yp = approveGoal(k); refreshMoney(k, yp ? yp.name + ' is ' + k.name + '’s new goal.' : ''); }
+  else if (a === 'gno') { var og = goalPrize(k); declineGoal(k); refreshMoney(k, og ? 'Not now. ' + og.name + ' stays ' + k.name + '’s goal.' : 'Not now. ' + k.name + ' has no goal for now.'); }
+  else if (a === 'gclear') { setGoal(k, ''); refreshMoney(k, k.name + ' has no goal now.'); }
+  else if (a === 'bpick') { var bp = bonusPick[k.id] || (bonusPick[k.id] = { n: 5, reason: '' }); bp.n = BONUS_N.indexOf(+b.getAttribute('data-n')) !== -1 ? +b.getAttribute('data-n') : 5; swapCard('bonuscard', bonusCard(k)); }
+  else if (a === 'bwhy') { var bw = bonusPick[k.id] || (bonusPick[k.id] = { n: 5, reason: '' }); bw.reason = b.getAttribute('data-t') || ''; swapCard('bonuscard', bonusCard(k)); }
+  else if (a === 'bgive') {
+    var bg = bonusPick[k.id] || (bonusPick[k.id] = { n: 5, reason: '' });
+    if (!String(bg.reason || '').trim()) { swapCard('bonuscard', bonusCard(k, 'Type what the stars are for, or tap one of the reasons.')); var br = document.getElementById('f-breason'); if (br) { br.focus(); } return; }
+    var gx = giveBonus(k, bg.n, bg.reason);
+    bg.reason = '';
+    refreshMoney(k, 'Gave ' + gx.stars + ' star' + (gx.stars === 1 ? '' : 's') + ' to ' + k.name + ': ' + gx.text + '. It shows in ' + k.name + '’s column when you lock settings.');
+  }
+  else if (a === 'brm') {
+    var bx = b.getAttribute('data-xid');
+    if (arm(b, 'brm' + bx, 'Tap again to remove')) { var rx = removeExtra(k, bx); refreshMoney(k, rx ? 'Removed the bonus: ' + rx.text + ' (' + rx.stars + ' stars).' : ''); }
+  }
   else if (a === 'add') {
     var part = CHORE_PARTS.indexOf(b.getAttribute('data-part')) !== -1 ? b.getAttribute('data-part') : 'evening';
     k.chores.push(makeChore('toys', part)); syncToday(k); save();
@@ -3999,7 +4469,13 @@ function settingsClick(e) {
   else if (a === 'starter') { if (arm(b, 'starter', 'Tap again to replace all chores')) { var g = document.getElementById('f-starter').value; k.group = g; k.chores = choresFor(g); k.goal = AGE_SETS[g].goal; clearDue(k, true); syncToday(k); save(); renderSettings('Loaded the starter chores for ages ' + AGE_SETS[g].label + '.'); } }
   else if (a === 'play') { unlockAudio(); celebrate(k, +document.getElementById('f-cele').value); }
   else if (a === 'cleartoday') { var r = rec(k, tk, false); if (r) { r.ids = []; clearSteps(r); } save(); flashNote(k.name + '’s checks for today are cleared, steps too.'); refreshKidCards(k); }
-  else if (a === 'wipe') { if (arm(b, 'wipe' + k.id, 'Tap again to erase')) { k.hist = {}; k.best = 1; k.ms = 0; k.claims = []; clearDue(k); data.fired = {}; save(); renderSettings('All of ' + k.name + '’s stars, levels, history and prizes given are erased.'); } }
+  else if (a === 'wipe') {
+    if (arm(b, 'wipe' + k.id, 'Tap again to erase')) {
+      k.hist = {}; k.best = 1; k.ms = 0; k.claims = []; k.extra = []; k.goalAsk = '';
+      k.jobs.forEach(function (j) { j.state = 'open'; j.paid = ''; j.at = ''; });
+      clearDue(k); data.fired = {}; save(); render(); renderSettings('All of ' + k.name + '’s stars (job and bonus stars too), levels, history and prizes given are erased.');
+    }
+  }
   else if (a === 'rmkid') {
     if (data.kids.length < 2) { return; }
     if (arm(b, 'rmkid' + k.id, 'Tap again to remove ' + k.name)) {
@@ -4073,6 +4549,11 @@ function settingsInput(e) {
   else if (f === 'sxp') { var v = parseInt(t.value, 10); if (v >= 0) { k.school.xp = Math.min(9999, v); save(); } }
   else if (f === 'pname') { var p = prizeOf(k, t); if (p) { p.name = t.value.trim() || 'Prize'; save(); } }
   else if (f === 'pcost') { var q = prizeOf(k, t), c = parseInt(t.value, 10); if (q && c > 0) { q.cost = Math.min(999, c); save(); } }
+  /* extra jobs and the bonus reason: saved as typed, the chart updates when settings are locked */
+  else if (f === 'jname') { var jn = jobOf(k, t); if (jn) { jn.name = t.value.trim().slice(0, 32) || 'Extra job'; save(); } }
+  else if (f === 'jwhen') { var jw = jobOf(k, t); if (jw) { jw.when = t.value.trim().slice(0, 60); save(); } }
+  else if (f === 'jstars') { var js = jobOf(k, t), jv = parseInt(t.value, 10); if (js && jv > 0) { js.stars = Math.min(JOB_MAX_STARS, jv); save(); } }
+  else if (f === 'breason') { (bonusPick[k.id] || (bonusPick[k.id] = { n: 5, reason: '' })).reason = t.value.slice(0, 60); }
 }
 function settingsChange(e) {
   var t = e.target, f = t.getAttribute && t.getAttribute('data-f');
@@ -4108,6 +4589,10 @@ function settingsChange(e) {
   else if (f === 'pevery' && k) { if (POTTY_EVERY.indexOf(+t.value) !== -1) { k.potty.every = +t.value; save(); swapCard('pottycard', pottyCard(k, 'Potty reminders every ' + everyText(k.potty.every) + '.')); } }
   else if (f === 'picon' && k) { var p = prizeOf(k, t); if (p) { p.icon = PRIZE_ICONS[t.value] ? t.value : 'gift'; save(); var pu = t.closest('.prow').querySelector('use'); if (pu) { pu.setAttribute('href', '#p-' + p.icon); } } }
   else if (f === 'pcost' && k) { var pc = prizeOf(k, t); if (pc && !(parseInt(t.value, 10) > 0)) { t.value = pc.cost; } }
+  else if (f === 'jstars' && k) { var jc = jobOf(k, t); if (jc && String(t.value) !== String(jc.stars)) { t.value = jc.stars; } }
+  else if (f === 'jicon' && k) { var ji = jobOf(k, t); if (ji && isPic(t.value)) { ji.icon = t.value; save(); var ju = t.closest('.jrow').querySelector('use'); if (ju) { ju.setAttribute('href', '#i-' + ji.icon); } } }
+  else if (f === 'jrep' && k) { var jr = jobOf(k, t); if (jr && JOB_REPEATS.indexOf(t.value) !== -1) { jr.repeat = t.value; if (jr.state === 'paid' && jr.repeat !== 'once' && jr.paid !== tk) { jr.state = 'open'; } save(); swapCard('jobscard', jobsCard(k)); } }
+  else if (f === 'goalpick' && k) { setGoal(k, t.value); refreshMoney(k, k.goalId ? findPrize(k, k.goalId).name + ' is ' + k.name + '’s goal.' : k.name + ' has no goal now.'); }
   else if (f === 'sxp' && k) { if (!(parseInt(t.value, 10) >= 0)) { t.value = k.school.xp; } }
   else if (f === 'fixdate' && k) { if (/^\d{4}-\d{2}-\d{2}$/.test(t.value) && t.value <= addDays(tk, 366)) { fix.date = t.value; fix.ptime = ''; swapCard('fixcard', fixCard(k)); } }
   else if (f === 'offn') { fix.run = +t.value || 3; }

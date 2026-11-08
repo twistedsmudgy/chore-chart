@@ -1,5 +1,5 @@
 /* Kids' Chore Chart offline helper: tries the network first so updates arrive, falls back to the saved copy offline. */
-var CACHE = 'kidschores-3.3.0';
+var CACHE = 'kidschores-3.4.0';
 var CORE = ['./', './index.html', './manifest.webmanifest', './icon.svg', './icon-192.png', './icon-512.png'];
 self.addEventListener('install', function (e) {
   self.skipWaiting();
